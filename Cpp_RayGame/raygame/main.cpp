@@ -10,6 +10,8 @@
 ********************************************************************************************/
 
 #include "raylib.h"
+#include "Game.h"
+#include <iostream>
 
 int main()
 {
@@ -19,6 +21,9 @@ int main()
 	int screenHeight = 450;
 
 	InitWindow(screenWidth, screenHeight, "Tic Tac Toe");
+
+	Player one;
+	Player two;
 
 	SetTargetFPS(60);
 	//--------------------------------------------------------------------------------------
@@ -37,7 +42,10 @@ int main()
 
 		ClearBackground(BLACK);
 
-		
+		board();
+		bounds();
+
+
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
