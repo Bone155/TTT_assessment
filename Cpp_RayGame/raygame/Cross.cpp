@@ -1,11 +1,14 @@
 #include "Cross.h"
 
-Cross::Cross(Vector2 s1, Vector2 e1, Vector2 s2, Vector2 e2)
+Cross::Cross(Vector2* pos)
 {
-	start1 = s1;
-	end1 = e1;
-	start2 = s2;
-	end2 = e2;
+	for (int i = 0; i < 3; i++) {
+		positions[i] = pos[i];
+	}
+}
+
+Cross::Cross()
+{
 }
 
 Cross::~Cross()
@@ -14,6 +17,6 @@ Cross::~Cross()
 
 void Cross::draw()
 {
-	DrawLineV(start1, end1, RED);
-	DrawLineV(start2, end2, RED);
+	DrawLineV(positions[0], positions[1], RED);
+	DrawLineV(positions[2], positions[3], RED);
 }

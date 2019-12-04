@@ -22,9 +22,6 @@ int main()
 
 	InitWindow(screenWidth, screenHeight, "Tic Tac Toe");
 
-	Player one;
-	Player two;
-
 	SetTargetFPS(60);
 	//--------------------------------------------------------------------------------------
 
@@ -42,8 +39,8 @@ int main()
 
 		ClearBackground(BLACK);
 
-		board();
-		bounds();
+		drawBoard();
+		update();
 
 
 

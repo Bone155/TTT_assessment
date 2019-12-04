@@ -7,6 +7,7 @@ class Circle : public Shape
 	float radius;
 public:
 	Circle(Vector2 pos, float rad);
+	Circle();
 	~Circle();
 
 	void draw() override;

@@ -6,6 +6,10 @@ Circle::Circle(Vector2 pos, float rad)
 	radius = rad;
 }
 
+Circle::Circle()
+{
+}
+
 Circle::~Circle()
 {
 }

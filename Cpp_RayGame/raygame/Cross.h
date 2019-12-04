@@ -3,12 +3,10 @@
 
 class Cross : public Shape
 {
-	Vector2 start1;
-	Vector2 end1;
-	Vector2 start2;
-	Vector2 end2;
+	Vector2* positions;
 public:
-	Cross(Vector2 s1, Vector2 e1, Vector2 s2, Vector2 e2);
+	Cross(Vector2* pos);
+	Cross();
 	~Cross();
 
 	void draw() override;
