@@ -10,7 +10,8 @@ void xPlayer(Board board)
 			cout << endl << "X turn" << endl << "Enter a row" << endl;
 			cin >> row;
 			if (cin.fail()) {
-				cout << "Not a number" << endl;
+				cout << "Error. Enter a row" << endl;
+				break;
 			}
 			else {
 				cout << endl;
@@ -23,7 +24,8 @@ void xPlayer(Board board)
 			cout << "Enter a column" << endl;
 			cin >> col;
 			if (cin.fail()) {
-				cout << "Not a number" << endl;
+				cout << "Error. Enter a col" << endl;
+				break;
 			}
 			else {
 				cout << endl;
@@ -55,7 +57,7 @@ void oPlayer(Board board)
 			cout << endl << "O turn" << endl << "Enter a row" << endl;
 			cin >> row;
 			if (cin.fail()) {
-				cout << "Not a number" << endl;
+				cout << "Error. Enter a row" << endl;
 				break;
 			}
 			else {
@@ -69,7 +71,7 @@ void oPlayer(Board board)
 			cout << "Enter a column" << endl;
 			cin >> col;
 			if (cin.fail()) {
-				cout << "Not a number" << endl;
+				cout << "Error. Enter a col" << endl;
 				break;
 			}
 			else {
@@ -79,7 +81,7 @@ void oPlayer(Board board)
 
 		}
 
-		if (board.boardTiles[row - 1][col - 1] != 'X' || board.boardTiles[row - 1][col - 1] != 'O') {
+		if (board.boardTiles[row - 1][col - 1] != 'X' && board.boardTiles[row - 1][col - 1] != 'O') {
 			board.boardTiles[row - 1][col - 1] = 'O';
 			board.drawBoard();
 			break;

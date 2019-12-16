@@ -4,10 +4,10 @@ int main() {
 	int size = 0;
 	bool isPlay = true;
 	string input;
-	List creed;
+	List targets;
 	cout << "Make a list of targets" << endl << "Enter number of targets" << endl;
 	cin >> size;
-	creed = { size };
+	targets = { size };
 	cout << endl << "Now enter target names (you can remove names by typing remove instead of an name or type print to print your list or type q to quit)" << endl;
 	while (isPlay) {
 		if (input == "q") {
@@ -16,21 +16,19 @@ int main() {
 		else if (input == "remove") {
 			cout << "Enter the name you want to remove" << endl;
 			cin >> input;
-			creed.remove(input);
+			targets.remove(input);
 		}
 		else if (input == "print")
 		{
 			cout << endl;
-			creed.print();
+			targets.print();
 		}
 		else {
 			cin >> input;
 		}
-		creed = { input };
-		
+		targets = { input };
 		
 	}
-
 
 	return 0;
 }
