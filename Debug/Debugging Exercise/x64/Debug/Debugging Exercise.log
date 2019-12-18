@@ -1,0 +1,7 @@
+﻿  Entity.cpp
+  Main.cpp
+  Marine.cpp
+  Zergling.cpp
+  Generating Code...
+  C:\Users\Bonesteele\Desktop\C++\TTT_assessment\Debug\Debugging Exercise\Main.cpp(37) : warning C4700: uninitialized local variable 'squadSize' used
+  Debugging Exercise.vcxproj -> C:\Users\Bonesteele\Desktop\C++\TTT_assessment\Debug\x64\Debug\Debugging Exercise.exe
