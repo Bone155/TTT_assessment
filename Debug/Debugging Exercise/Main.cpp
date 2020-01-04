@@ -23,20 +23,20 @@
 using std::cout;
 using std::endl;
 
-bool marineAlive();
+bool marineAlive(Marine* marines);
 bool zerglingAlive(Zergling* swarmArr, size_t arrSize);
 
 int main()
 {
 	Marine* squad[10] = {};
 	Zergling* swarm[20] = {};
-	size_t zerglingSize;
+	size_t zerglingSize = 25;
 
 	cout << "A squad of marines approaches a swarm of Zerglings and opens fire! The Zerglings charge!" << endl;
 	// Attack each other until only one team is left alive
-	while (marineAlive() || zerglingAlive(*swarm, zerglingSize)) // If anyone is left alive to fight . . .
+	while (marineAlive(*squad) || zerglingAlive(*swarm, zerglingSize)) // If anyone is left alive to fight . . .
 	{
-		if (marineAlive()) // if there's at least one marine alive
+		if (marineAlive(*squad)) // if there's at least one marine alive
 		{
 			for (size_t i = 0; i < 10; i++) // go through the squad
 			{
@@ -52,40 +52,64 @@ int main()
 		}
 		if (zerglingAlive(*swarm, zerglingSize)) // if there's at least one zergling alive
 		{
+			int squadMem = 0;
 			for (size_t i = 0; i < zerglingSize; i++) // loop through zerglings
 			{
 				cout << "A zergling attacks for " << swarm[i]->attack() << " damage." << endl;
-				squad[0]->takeDamage(swarm[i]->attack());
-				if (squad[0]->isAlive())
+				squad[i]->takeDamage(swarm[i]->attack());
+				if (squad[i]->isAlive())
 				{
-
+					squadMem++;
 				}
-				else
+				else {
 					cout << "The marine succumbs to his wounds." << endl;
-					cout << "There are ??? marines left." << endl;
-					
+					cout << "$There are {squadMem} marines left." << endl;
+				}
 			}
 		}
 	}
 
 	// Once one team is completely eliminated, the fight ends and one team wins
 	cout << "The fight is over. ";
-	if (marineAlive())
+	if (marineAlive(*squad))
 	{
 		cout << "The Marines win." << endl;
-	} else {
+	} 
+	else if (zerglingAlive(*swarm, zerglingSize)) {
 		cout << "The Zerg win." << endl;
 	}
+	else {
+		cout << "Draw" << endl;
+	}
+	system("pause");
 }
 
 // Is there a Marine Alive?
-bool marineAlive()
+bool marineAlive(Marine* marines)
 {
-	return false;
+	bool alive = false;
+	for (size_t i = 0; i < 10; i++) {
+		if (marines[i].isAlive()) {
+			alive = true;
+		}
+		else {
+			alive = false;
+		}
+	}
+	return alive;
 }
 
 // Is there a zergling Alive
 bool zerglingAlive(Zergling * swarmArr, size_t arrSize)
 {
-	return false;
+	bool alive = false;
+	for (size_t i = 0; i < arrSize; i++) {
+		if (swarmArr[i].isAlive()) {
+			alive = true;
+		}
+		else {
+			alive = false;
+		}
+	}
+	return alive;
 }

@@ -13,7 +13,7 @@ struct Target {
 
 class List
 {
-	Target creed;
+	Target* list;
 	string* targets;
 	int size;
 public:

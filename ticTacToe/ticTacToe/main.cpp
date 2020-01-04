@@ -39,6 +39,10 @@ void xPlayer(Board board)
 			board.drawBoard();
 			break;
 		}
+		else if (cin.fail()) {
+			cout << "Error" << endl;
+			continue;
+		}
 		else
 		{
 			cout << "Spot taken" << endl;
@@ -85,6 +89,10 @@ void oPlayer(Board board)
 			board.boardTiles[row - 1][col - 1] = 'O';
 			board.drawBoard();
 			break;
+		}
+		else if (cin.fail()) {
+			cout << "Error" << endl;
+			continue;
 		}
 		else
 		{

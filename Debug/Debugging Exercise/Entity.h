@@ -7,7 +7,6 @@ public:
 
 	virtual int attack();
 	virtual void takeDamage(int damage);
-	bool isAlive();
 
 protected:
 	int health;

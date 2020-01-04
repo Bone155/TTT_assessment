@@ -22,3 +22,14 @@ void Zergling::takeDamage(int damage)
 	if (health < 0)
 		health = 0;
 }
+
+bool Zergling::isAlive()
+{
+	bool alive;
+	if (health > 0)
+		alive = true;
+	else {
+		alive = false;
+	}
+	return alive;
+}
