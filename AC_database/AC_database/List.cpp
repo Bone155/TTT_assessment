@@ -4,11 +4,6 @@ List::List()
 {
 }
 
-List::List(int _size)
-{
-	size = _size;
-}
-
 List::List(string & input)
 {
 	for (int i = 0; i < size; i++) {
@@ -33,6 +28,6 @@ void List::remove(string &name)
 void List::print()
 {
 	for (int i = 0; i < size; i++) {
-		cout << "${targets[i]}" << endl;
+		cout << targets[i] << endl;
 	}
 }

@@ -15,10 +15,9 @@ class List
 {
 	Target* list;
 	string* targets;
-	int size;
 public:
+	int size;
 	List();
-	List(int _size);
 	List(string &input);
 	~List();
 
