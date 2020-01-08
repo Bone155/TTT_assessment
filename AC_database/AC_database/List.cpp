@@ -20,7 +20,7 @@ void List::remove(string &name)
 {
 	for (int i = 0; i < size; i++) {
 		if (name == targets[i]) {
-			targets[i].empty();
+			targets[i] = "";
 		}
 	}
 }
