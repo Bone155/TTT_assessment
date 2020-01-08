@@ -1,8 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using std::string;
+using std::fstream;
+using std::ios;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -14,7 +17,7 @@ struct Target {
 class List
 {
 	Target* list;
-	string* targets;
+	
 public:
 	int size;
 	List();
