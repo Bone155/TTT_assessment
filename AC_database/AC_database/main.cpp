@@ -14,7 +14,9 @@ int main() {
 			break;
 		}
 		else if (input == "Remove" || input == "remove") {
-			targets.clear();
+			cout << "Enter name to remove" << endl;
+			cin >> input;
+			targets.remove(input);
 			cout << endl;
 		}
 		else if (input == "Print" || input == "print")
@@ -36,9 +38,9 @@ int main() {
 				std::getline(cin, input);
 				file << input << endl;
 			}
-			cout << endl;
 			file.flush();
 			file.close();
+			targets = { input };
 		}
 		else if (cin.fail()) {
 			cout << "invalid input" << endl;

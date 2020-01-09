@@ -1,0 +1,6 @@
+﻿  Board.cpp
+  main.cpp
+  Generating Code...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): warning MSB8015: All source files are not up-to-date:  forcing a rebuild of all source files due to the contents of 'C:\Users\Bonesteele\Desktop\C++\TTT_assessment\ticTacToe\ticTacToe\x64\Debug\ticTacToe.tlog\CL.command.1.tlog' being invalid.
+  LINK : C:\Users\Bonesteele\Desktop\C++\TTT_assessment\ticTacToe\x64\Debug\ticTacToe.exe not found or not built by the last incremental link; performing full link
+  ticTacToe.vcxproj -> C:\Users\Bonesteele\Desktop\C++\TTT_assessment\ticTacToe\x64\Debug\ticTacToe.exe

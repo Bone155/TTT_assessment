@@ -1,2 +1,2 @@
-﻿  main.cpp
-  AC_database.vcxproj -> C:\Users\s199010\source\repos\TTT_assessment\AC_database\x64\Debug\target_database.exe
+﻿  List.cpp
+C:\Users\Bonesteele\Desktop\C++\TTT_assessment\AC_database\AC_database\List.cpp(51,18): error C3867:  'std::basic_fstream<char,std::char_traits<char>>::is_open': non-standard syntax; use '&' to create a pointer to member

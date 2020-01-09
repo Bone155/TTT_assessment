@@ -6,25 +6,10 @@ List::List()
 
 List::List(string & input)
 {
-	/*for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) {
 		list->name[(size - 1) - i] = input;
-	}*/
-	fstream file;
-	file.open("HitList.txt", ios::out | ios::app);
-	if (!file.is_open())
-	{
-		std::cerr << "File not found." << endl;
 	}
-	file.clear();
-	cin >> lines;
-	cout << endl;
-	for (int i = -1; i < lines; i++) {
-		std::getline(cin, input);
-		file << input << endl;
-	}
-	cout << endl;
-	file.flush();
-	file.close();
+	
 }
 
 
@@ -40,11 +25,38 @@ void List::remove(string &name)
 			list->name[i] = "";
 		}
 	}
+	find(list, name);
 }
 
 void List::print()
 {
-	for (int i = 0; i < size; i++) {
-		cout << list->name[i] << endl;
+	fstream file;
+	file.open("HitList.txt", ios::in);
+	if (!file.is_open())
+	{
+		std::cerr << "File not found." << endl;
 	}
+	string text;
+	while (std::getline(file, text)) {
+		cout << text << endl;
+	}
+	cout << endl;
+	file.close();
+}
+
+Target List::find(Target* targets, string& name) {
+	Target tag;
+	fstream file;
+	file.open("HitList.txt", ios::in);
+	if (file.is_open) {
+		string text;
+		while (std::getline(file, text)) {
+			if (&text == &name) {
+				tag.name = &text;
+			}
+		}
+		file.close();
+	}
+	return tag;
+
 }

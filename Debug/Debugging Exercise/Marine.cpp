@@ -1,8 +1,8 @@
 #include "Marine.h"
 
-Marine::Marine()
+Marine::Marine(int hp)
 {
-	health = 50;
+	health = hp;
 }
 
 Marine::~Marine()

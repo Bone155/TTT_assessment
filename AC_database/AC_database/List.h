@@ -26,5 +26,6 @@ public:
 
 	void remove(string &name);
 	void print();
+	Target find(Target* targets, string& name);
 };
 

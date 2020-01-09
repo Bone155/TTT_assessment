@@ -3,7 +3,7 @@
 class Marine : public Entity
 {
 public:
-	Marine();
+	Marine(int hp);
 	~Marine();
 
 	int attack();

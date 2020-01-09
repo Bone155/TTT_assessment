@@ -10,7 +10,8 @@ void xPlayer(Board board)
 			cout << endl << "X turn" << endl << "Enter a row" << endl;
 			cin >> row;
 			if (cin.fail()) {
-				cout << "Error. Enter a row" << endl;
+				cout << "Invalid input. Enter a row" << endl;
+				cin >> row;
 				break;
 			}
 			else {
@@ -24,7 +25,8 @@ void xPlayer(Board board)
 			cout << "Enter a column" << endl;
 			cin >> col;
 			if (cin.fail()) {
-				cout << "Error. Enter a col" << endl;
+				cout << "Invalid input. Enter a col" << endl;
+				cin >> col;
 				break;
 			}
 			else {
@@ -34,14 +36,14 @@ void xPlayer(Board board)
 			
 		}
 
-		if (board.boardTiles[row - 1][col - 1] != 'X' && board.boardTiles[row - 1][col - 1] != 'O') {
+		if (cin.fail()) {
+			cout << "Invalid input" << endl;
+			break;
+		}
+		else if (board.boardTiles[row - 1][col - 1] != 'X' && board.boardTiles[row - 1][col - 1] != 'O') {
 			board.boardTiles[row - 1][col - 1] = 'X';
 			board.drawBoard();
 			break;
-		}
-		else if (cin.fail()) {
-			cout << "Error" << endl;
-			continue;
 		}
 		else
 		{
@@ -61,7 +63,8 @@ void oPlayer(Board board)
 			cout << endl << "O turn" << endl << "Enter a row" << endl;
 			cin >> row;
 			if (cin.fail()) {
-				cout << "Error. Enter a row" << endl;
+				cout << "Invalid input. Enter a row" << endl;
+				cin >> row;
 				break;
 			}
 			else {
@@ -75,7 +78,8 @@ void oPlayer(Board board)
 			cout << "Enter a column" << endl;
 			cin >> col;
 			if (cin.fail()) {
-				cout << "Error. Enter a col" << endl;
+				cout << "Invalid input. Enter a col" << endl;
+				cin >> col;
 				break;
 			}
 			else {
@@ -85,14 +89,14 @@ void oPlayer(Board board)
 
 		}
 
-		if (board.boardTiles[row - 1][col - 1] != 'X' && board.boardTiles[row - 1][col - 1] != 'O') {
+		if (cin.fail()) {
+			cout << "Invalid input" << endl;
+			break;
+		}
+		else if (board.boardTiles[row - 1][col - 1] != 'X' && board.boardTiles[row - 1][col - 1] != 'O') {
 			board.boardTiles[row - 1][col - 1] = 'O';
 			board.drawBoard();
 			break;
-		}
-		else if (cin.fail()) {
-			cout << "Error" << endl;
-			continue;
 		}
 		else
 		{
@@ -108,6 +112,10 @@ int main() {
 	size_t size;
 	cout << "Enter the size of the board. (n*n)" << endl;
 	cin >> size;
+	if (cin.fail()) {
+		cout << "Invalid input. enter a board size" << endl;
+		cin >> size;
+	}
 
 	Board board = { size };
 

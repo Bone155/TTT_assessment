@@ -2,8 +2,9 @@
 
 
 
-Zergling::Zergling()
+Zergling::Zergling(int hp)
 {
+	health = hp;
 }
 
 
